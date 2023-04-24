@@ -1,0 +1,14 @@
+C:\Users\Dell\Desktop\Atestat\Chess Atestat\Chess Atestat\bin\Debug\Chess Atestat.exe.config
+C:\Users\Dell\Desktop\Atestat\Chess Atestat\Chess Atestat\bin\Debug\Chess Atestat.exe
+C:\Users\Dell\Desktop\Atestat\Chess Atestat\Chess Atestat\bin\Debug\Chess Atestat.pdb
+C:\Users\Dell\Desktop\Atestat\Chess Atestat\Chess Atestat\obj\Debug\Chess Atestat.csproj.AssemblyReference.cache
+C:\Users\Dell\Desktop\Atestat\Chess Atestat\Chess Atestat\obj\Debug\Chess Atestat.csproj.SuggestedBindingRedirects.cache
+C:\Users\Dell\Desktop\Atestat\Chess Atestat\Chess Atestat\obj\Debug\Chess_Atestat.Properties.Resources.resources
+C:\Users\Dell\Desktop\Atestat\Chess Atestat\Chess Atestat\obj\Debug\Chess Atestat.csproj.GenerateResource.cache
+C:\Users\Dell\Desktop\Atestat\Chess Atestat\Chess Atestat\obj\Debug\Chess Atestat.csproj.CoreCompileInputs.cache
+C:\Users\Dell\Desktop\Atestat\Chess Atestat\Chess Atestat\obj\Debug\Chess Atestat.exe
+C:\Users\Dell\Desktop\Atestat\Chess Atestat\Chess Atestat\obj\Debug\Chess Atestat.pdb
+C:\Users\Dell\Desktop\Atestat\Chess Atestat\Chess Atestat\obj\Debug\Chess_Atestat.Form1.resources
+C:\Users\Dell\Desktop\Atestat\Chess Atestat\Chess Atestat\obj\Debug\Chess_Atestat.FormJoc.resources
+C:\Users\Dell\Desktop\Atestat\Chess Atestat\Chess Atestat\obj\Debug\Chess_Atestat.FormSettings.resources
+C:\Users\Dell\Desktop\Atestat\Chess Atestat\Chess Atestat\obj\Debug\Chess_Atestat.FormInregistrare.resources
