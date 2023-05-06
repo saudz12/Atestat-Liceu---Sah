@@ -65,6 +65,12 @@
     <Compile Include="FormJoc.Designer.cs">
       <DependentUpon>FormJoc.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormPlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPlay.Designer.cs">
+      <DependentUpon>FormPlay.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSettings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormJoc.resx">
       <DependentUpon>FormJoc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPlay.resx">
+      <DependentUpon>FormPlay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSettings.resx">
       <DependentUpon>FormSettings.cs</DependentUpon>
@@ -167,6 +176,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\photo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\golden-chess-king-standing-alone-on-the-chessboard-photo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modern-dark-texture-background-vector.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black_king1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

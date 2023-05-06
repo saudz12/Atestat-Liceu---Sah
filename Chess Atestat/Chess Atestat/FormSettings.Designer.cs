@@ -42,13 +42,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.labelWelcome = new System.Windows.Forms.Label();
             this.buttonLogout = new System.Windows.Forms.Button();
             this.panelLogin.SuspendLayout();
             this.panelUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -171,8 +168,6 @@
             this.panelUser.Controls.Add(this.label6);
             this.panelUser.Controls.Add(this.label5);
             this.panelUser.Controls.Add(this.label1);
-            this.panelUser.Controls.Add(this.pictureBox1);
-            this.panelUser.Controls.Add(this.button2);
             this.panelUser.Controls.Add(this.labelWelcome);
             this.panelUser.Controls.Add(this.buttonLogout);
             this.panelUser.Location = new System.Drawing.Point(12, 12);
@@ -185,7 +180,7 @@
             this.button1.BackColor = System.Drawing.Color.DarkCyan;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(23, 174);
+            this.button1.Location = new System.Drawing.Point(0, 139);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(187, 35);
             this.button1.TabIndex = 19;
@@ -229,29 +224,6 @@
             this.label1.TabIndex = 22;
             this.label1.Text = "Games:";
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::Chess_Atestat.Properties.Resources.default_avatar_profile_icon;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(162, 25);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(120, 120);
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.DarkCyan;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button2.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(237, 174);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(187, 35);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Upload an Image";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.UseVisualStyleBackColor = false;
-            // 
             // labelWelcome
             // 
             this.labelWelcome.AutoSize = true;
@@ -269,7 +241,7 @@
             this.buttonLogout.BackColor = System.Drawing.Color.DarkCyan;
             this.buttonLogout.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonLogout.Font = new System.Drawing.Font("Palatino Linotype", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonLogout.Location = new System.Drawing.Point(300, 60);
+            this.buttonLogout.Location = new System.Drawing.Point(225, 137);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Size = new System.Drawing.Size(89, 37);
             this.buttonLogout.TabIndex = 17;
@@ -294,7 +266,6 @@
             this.panelLogin.PerformLayout();
             this.panelUser.ResumeLayout(false);
             this.panelUser.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -313,8 +284,6 @@
         private System.Windows.Forms.Button buttonLogout;
         private System.Windows.Forms.Label labelWelcome;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;

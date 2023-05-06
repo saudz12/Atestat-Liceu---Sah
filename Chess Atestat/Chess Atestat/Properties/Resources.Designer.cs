@@ -73,46 +73,6 @@ namespace Chess_Atestat.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap arrow_symbol_down {
-            get {
-                object obj = ResourceManager.GetObject("arrow-symbol_down", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap arrow_symbol_left {
-            get {
-                object obj = ResourceManager.GetObject("arrow-symbol_left", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap arrow_symbol_right___Copy {
-            get {
-                object obj = ResourceManager.GetObject("arrow-symbol_right - Copy", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap arrow_symbol_up {
-            get {
-                object obj = ResourceManager.GetObject("arrow-symbol_up", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap bishop_black {
             get {
                 object obj = ResourceManager.GetObject("bishop_black", resourceCulture);
@@ -126,6 +86,16 @@ namespace Chess_Atestat.Properties {
         internal static System.Drawing.Bitmap black_king {
             get {
                 object obj = ResourceManager.GetObject("black_king", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap black_king1 {
+            get {
+                object obj = ResourceManager.GetObject("black_king1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -193,9 +163,9 @@ namespace Chess_Atestat.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap default_avatar_profile_icon {
+        internal static System.Drawing.Bitmap golden_chess_king_standing_alone_on_the_chessboard_photo {
             get {
-                object obj = ResourceManager.GetObject("default-avatar-profile-icon", resourceCulture);
+                object obj = ResourceManager.GetObject("golden-chess-king-standing-alone-on-the-chessboard-photo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

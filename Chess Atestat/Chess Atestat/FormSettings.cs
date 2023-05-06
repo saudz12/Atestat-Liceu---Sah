@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Chess_Atestat
 {
@@ -53,7 +54,7 @@ namespace Chess_Atestat
         }
         public void button_MouseEnterLeave(object sender, EventArgs e)
         {
-            Button b1 = (Button)sender;
+            System.Windows.Forms.Button b1 = (System.Windows.Forms.Button)sender;
             if(b1.BackColor == Color.DarkCyan) b1.BackColor = Color.LightBlue;
             else b1.BackColor = Color.DarkCyan;
         }
@@ -67,5 +68,7 @@ namespace Chess_Atestat
             panelUser.Visible = false;
             panelLogin.Visible = true;
         }
+
+       
     }
 }

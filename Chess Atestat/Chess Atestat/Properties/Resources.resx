@@ -121,9 +121,6 @@
   <data name="white_king" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_king.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="arrow-symbol_down" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrow-symbol_down.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="black_rook" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\black_rook.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -132,6 +129,9 @@
   </data>
   <data name="white_knight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_knight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="golden-chess-king-standing-alone-on-the-chessboard-photo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\golden-chess-king-standing-alone-on-the-chessboard-photo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="white_rook" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_rook.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,9 +151,6 @@
   <data name="white_bishop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_bishop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="arrow-symbol_left" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrow-symbol_left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="black_knight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\black_knight.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,22 +160,16 @@
   <data name="27319.746c2259.668x375o.c6cf8543e2d5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\27319.746c2259.668x375o.c6cf8543e2d5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="black_pawn" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\black_pawn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="arrow-symbol_up" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrow-symbol_up.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="photo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\photo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="white_pawn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\white_pawn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="default-avatar-profile-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\default-avatar-profile-icon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="black_pawn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_pawn.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="arrow-symbol_right - Copy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\arrow-symbol_right - Copy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="photo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\photo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="black_king1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\black_king1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

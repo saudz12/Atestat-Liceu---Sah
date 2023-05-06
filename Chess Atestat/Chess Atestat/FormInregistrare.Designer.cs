@@ -62,8 +62,8 @@
             this.buttonBack.Text = "Back";
             this.buttonBack.UseVisualStyleBackColor = false;
             this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
-            this.buttonBack.MouseEnter += new System.EventHandler(this.buttonBack_MouseEnter);
-            this.buttonBack.MouseLeave += new System.EventHandler(this.buttonBack_MouseLeave);
+            this.buttonBack.MouseEnter += new System.EventHandler(this.button_MouseEnterLeave);
+            this.buttonBack.MouseLeave += new System.EventHandler(this.button_MouseEnterLeave);
             // 
             // buttonSignUp
             // 
@@ -77,8 +77,8 @@
             this.buttonSignUp.Text = "Sing up";
             this.buttonSignUp.UseVisualStyleBackColor = false;
             this.buttonSignUp.Click += new System.EventHandler(this.buttonSignUp_Click);
-            this.buttonSignUp.MouseEnter += new System.EventHandler(this.buttonSignUp_MouseEnter);
-            this.buttonSignUp.MouseLeave += new System.EventHandler(this.buttonSignUp_MouseLeave);
+            this.buttonSignUp.MouseEnter += new System.EventHandler(this.button_MouseEnterLeave);
+            this.buttonSignUp.MouseLeave += new System.EventHandler(this.button_MouseEnterLeave);
             // 
             // textBoxNume
             // 

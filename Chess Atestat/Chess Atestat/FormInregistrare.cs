@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using Chess_Atestat.Properties;
 
 namespace Chess_Atestat
 {
@@ -54,21 +55,11 @@ namespace Chess_Atestat
         {
             this.Close();
         }
-        private void buttonSignUp_MouseEnter(object sender, EventArgs e)
+        public void button_MouseEnterLeave(object sender, EventArgs e)
         {
-            buttonSignUp.BackColor = Color.LightBlue;
-        }
-        private void buttonSignUp_MouseLeave(object sender, EventArgs e)
-        {
-            buttonSignUp.BackColor = Color.DarkCyan;
-        }
-        private void buttonBack_MouseEnter(object sender, EventArgs e)
-        {
-            buttonBack.BackColor = Color.LightBlue;
-        }
-        private void buttonBack_MouseLeave(object sender, EventArgs e)
-        {
-            buttonBack.BackColor = Color.DarkCyan;
+            System.Windows.Forms.Button b1 = (System.Windows.Forms.Button)sender;
+            if (b1.BackColor == Color.DarkCyan) b1.BackColor = Color.LightBlue;
+            else b1.BackColor = Color.DarkCyan;
         }
         private void checkBoxView_CheckedChanged(object sender, EventArgs e)
         {
