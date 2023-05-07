@@ -14,6 +14,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Collections.Specialized;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Microsoft.SqlServer.Server;
+using System.Diagnostics;
 
 namespace Chess_Atestat
 {
@@ -39,6 +40,14 @@ namespace Chess_Atestat
             InitializeComponent();
             stuff(getWhite, getBlack);
         }
+
+        public void button_MouseEnterLeave(object sender, EventArgs e)
+        {
+            Button b1 = (Button)sender;
+            if (b1.BackColor == Color.SaddleBrown) b1.BackColor = Color.Peru;
+            else b1.BackColor = Color.SaddleBrown;
+        }
+
         public void stuff(string getWhite, string getBlack)
         {
             deschidere_conexiune();
@@ -320,6 +329,7 @@ namespace Chess_Atestat
             if (active_piece == "King") return king_moves(i, j);
             return true;
         }
+
         bool is_not_king(int i, int j)
         {
             if (active_side == "White")
@@ -358,7 +368,6 @@ namespace Chess_Atestat
             }
 
         }
-
         bool checked_by_bishop(int KI, int KJ)
         {
             int i, j;
@@ -392,7 +401,6 @@ namespace Chess_Atestat
                 }
             return false;
         }
-
         bool checked_by_rook(int KI, int KJ)
         {
             int i, j;
@@ -426,7 +434,6 @@ namespace Chess_Atestat
                 }
             return false;
         }
-
         bool checked_by_knight(int KI, int KJ)
         {
             if (KI - 2 >= 0 && KJ - 1 >= 0) if (get_piece(KI - 2, KJ - 1) == "Knight" && get_side(KI - 2, KJ - 1) == get_opposing_side()) return true;
@@ -443,57 +450,143 @@ namespace Chess_Atestat
 
             return false;
         }
-
         bool curr_is_checked()
         {
             int KI = current_KingI(), KJ = current_KingJ();
-            Console.WriteLine(KI + " " + KJ);
+            //Console.WriteLine(KI + " " + KJ);
 
             return checked_by_pawn(KI, KJ) || checked_by_bishop(KI, KJ) || checked_by_rook(KI, KJ) || checked_by_knight(KI, KJ);
         }
 
-        bool curr_is_mated()
+        bool simulate(int oldI, int oldJ, int newI, int newJ)
         {
-            
+            int is_checked = 1;
+            string oldTag = chess_board[oldI, oldJ].Tag.ToString();
+            string newTag = chess_board[newI, newJ].Tag.ToString();
+
+            if(get_piece(oldI, oldJ) == "King")
+            {
+                if(active_side == "White")
+                {
+                    white_kingI = newI;
+                    white_kingJ = newJ;
+                }
+                else
+                {
+                    black_kingI = newI;
+                    black_kingJ = newJ;
+                }
+            }
+
+            chess_board[oldI, oldJ].Tag = "Neutral Space" + oldI + oldJ;
+            chess_board[newI, newJ].Tag = oldTag;
+
+            if (curr_is_checked() == false)
+                is_checked = 0;
+
+            if (get_piece(newI, newJ) == "King")
+            {
+                if (active_side == "White")
+                {
+                    white_kingI = oldI;
+                    white_kingJ = oldJ;
+                }
+                else
+                {
+                    black_kingI = oldI;
+                    black_kingJ = oldJ;
+                }
+            }
+
+            chess_board[oldI, oldJ].Tag = oldTag;
+            chess_board[newI, newJ].Tag = newTag;
+
+            if (is_checked == 0)
+                return true;
             return false;
         }
 
-        public void end_game()
+        bool pawn_stops_mate(int i, int j)
         {
+            if(active_side == "White")
+            {
+                if (i - 1 >= 0) if (get_piece(i - 1, j) == "Space") if (simulate(i, j, i - 1, j) == true) return true;
+                if (i - 1 >= 0 && j - 1 >= 0) if (get_piece(i - 1, j - 1) != "Space" && get_side(i - 1, j - 1) == get_opposing_side()) if (simulate(i, j, i - 1, j - 1) == true) return true;
+                if (i - 1 >= 0 && j + 1 <= 7) if (get_piece(i - 1, j + 1) != "Space" && get_side(i - 1, j + 1) == get_opposing_side()) if (simulate(i, j, i - 1, j + 1) == true) return true;
+                if (i - 2 >= 0 && did_first_move[0, get_ord(i, j)] == false) if (get_piece(i - 1, j) == "Space" && get_piece(i - 2, j) == "Space") if (simulate(i, j, i - 2, j) == true) return true;
+            }
+            else
+            {
+                if (i + 1 <= 7) if (get_piece(i + 1, j) == "Space") if (simulate(i, j, i + 1, j) == true) return true;
+                if (i + 1 <= 7 && j - 1 >= 0) if (get_piece(i + 1, j - 1) != "Space" && get_side(i + 1, j - 1) == get_opposing_side()) if (simulate(i, j, i + 1, j - 1) == true) return true;
+                if (i + 1 <= 7 && j + 1 <= 7) if (get_piece(i + 1, j + 1) != "Space" && get_side(i + 1, j + 1) == get_opposing_side()) if (simulate(i, j, i + 1, j - 1) == true) return true;
+                if (i + 2 <= 7 && did_first_move[0, get_ord(i, j)] == false) if (get_piece(i + 1, j) == "Space" && get_piece(i + 2, j) == "Space") if (simulate(i, j, i + 2, j) == true) return true;
+            }
+            return false;
+        }
+        bool bishop_stops_mate(int i, int j)
+        {
+
+            return false;
+        }
+        bool rook_stops_mate(int i, int j)
+        {
+            return false;
+        }
+        bool knight_stops_mate(int i, int j)
+        {
+            return false;
+        }
+        bool king_stops_mate(int i, int j)
+        {
+            if (i - 1 >= 0 && j - 1 >= 0) if (get_piece(i - 1, j - 1) == "Space" || get_side(i - 1, j - 1) == get_opposing_side()) if (simulate(i, j, i - 1, j - 1) == true) return true;
+            if (i - 1 >= 0) if (get_piece(i - 1, j) == "Space" || get_side(i - 1, j) == get_opposing_side()) if (simulate(i, j, i - 1, j) == true) return true;
+            if (i - 1 >= 0 && j + 1 <= 7) if (get_piece(i - 1, j + 1) == "Space" || get_side(i - 1, j + 1) == get_opposing_side()) if (simulate(i, j, i - 1, j + 1) == true) return true;
+            if (j + 1 <= 7) if (get_piece(i, j + 1) == "Space" || get_side(i, j + 1) == get_opposing_side()) if (simulate(i, j, i, j + 1) == true) return true;
+            if (i + 1 <= 7 && j + 1 <= 7) if (get_piece(i + 1, j + 1) == "Space" || get_side(i + 1, j + 1) == get_opposing_side()) if (simulate(i, j, i + 1, j + 1) == true) return true;
+            if (i + 1 <= 7) if (get_piece(i + 1, j) == "Space" || get_side(i + 1, j) == get_opposing_side()) if (simulate(i, j, i + 1, j) == true) return true;
+            if (i + 1 <= 7 && j - 1 >= 0) if (get_piece(i + 1, j - 1) == "Space" || get_side(i + 1, j - 1) == get_opposing_side()) if (simulate(i, j, i + 1, j - 1) == true) return true;
+            if (j - 1 >= 0) if (get_piece(i, j - 1) == "Space" || get_side(i, j - 1) == get_opposing_side()) if (simulate(i, j, i, j - 1) == true) return true;
+
+            return false;
+        }
+
+        bool curr_is_mated()
+        {
+            for(int i = 0; i <= 7; i++)
+                for(int j = 0; j <= 7; j++)
+                {
+                    if (get_piece(i, j) == "Space" || get_side(i, j) == get_opposing_side()) continue;
+                    if (get_piece(i, j) == "Pawn") if (pawn_stops_mate(i, j) == true) return false;
+                    if (get_piece(i, j) == "Bishop" || get_piece(i, j) == "Queen") if (bishop_stops_mate(i, j) == true) return false;
+                    if (get_piece(i, j) == "Rook" || get_piece(i, j) == "Queen") if (rook_stops_mate(i, j) == true) return false;
+                    if (get_piece(i, j) == "Knight") if (knight_stops_mate(i, j) == true) return false;
+                    if (get_piece(i, j) == "King") if (king_stops_mate(i, j) == true) return false;
+                }
+            return true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            end_game();
+        }
+
+        public void end_game()
+        {   
             SqlCommand cmd;
             cmd = new SqlCommand("UPDATE Utilizatori SET NrWinuri = NrWinuri+1, NrJocuri = NrJocuri+1 WHERE NumeUtilizator = @Nume", conn);
-            cmd.Parameters.AddWithValue("@Nume", (active_side == "White") ? playerBlack : playerWhite);
+            cmd.Parameters.AddWithValue("@Nume", (turn%2 == 1) ? playerBlack : playerWhite);
             cmd.ExecuteNonQuery();
             cmd = new SqlCommand("UPDATE Utilizatori SET NrJocuri = NrJocuri+1 WHERE NumeUtilizator = @Nume");
-            cmd.Parameters.AddWithValue("@Nume", (active_side == "White") ? playerWhite : playerBlack);
-            MessageBox.Show($"{get_opposing_side()} Won!");
+            cmd.Parameters.AddWithValue("@Nume", (turn%2 == 1) ? playerWhite : playerBlack);
+            string winning_side = (turn % 2 == 1) ? "Black" : "White";
+            MessageBox.Show($"{winning_side} Won!");
             this.Close();
         }
 
         public void highlight()
         {
-            /*Console.WriteLine(activeI + " " + activeJ);
-            string piece = get_piece(activeJ, activeJ);
-            if (piece == "Space")
-                return;
-            if(piece == "Pawn")
-            {
-                if(active_side == "White")
-                {
-                    if (activeI - 1 >= 0 && activeJ - 1 >= 0) if (can_move(activeI - 1, activeJ - 1) == true) chess_board[activeI - 1, activeJ - 1].BackColor = Color.LightSkyBlue;
-                    if (activeI - 1 >= 0 && activeJ + 1 <= 7) if (can_move(activeI - 1, activeJ + 1) == true) chess_board[activeI - 1, activeJ + 1].BackColor = Color.LightSkyBlue;
-                    if (activeI - 1 >= 0) if(can_move(activeI-1, activeJ) == true) chess_board[activeI-1, activeJ].BackColor = Color.LightSkyBlue;
-                    if (activeI - 2 >= 0) if(can_move(activeI-2, activeJ) == true) chess_board[activeI-2, activeJ].BackColor = Color.LightSkyBlue;
-                }
-                else
-                {
-                    if (activeI + 1 <= 7 && activeJ - 1 >= 0) if (can_move(activeI + 1, activeJ - 1) == true) chess_board[activeI + 1, activeJ - 1].BackColor = Color.LightSkyBlue;
-                    if (activeI + 1 <= 7 && activeJ + 1 <= 7) if (can_move(activeI + 1, activeJ + 1) == true) chess_board[activeI + 1, activeJ + 1].BackColor = Color.LightSkyBlue;
-                    if (activeI + 1 <= 7) if (can_move(activeI + 1, activeJ) == true) chess_board[activeI + 1, activeJ].BackColor = Color.LightSkyBlue;
-                    if (activeI + 2 <= 7) if (can_move(activeI + 2, activeJ) == true) chess_board[activeI + 2, activeJ].BackColor = Color.LightSkyBlue;
-                }
-                return;
-            }*/
+            
         }
         public void decolor()
         {
@@ -511,7 +604,6 @@ namespace Chess_Atestat
             int i = p.X - 1, j = p.Y - 1;
             int auxKingI = current_KingI();
             int auxKingJ = current_KingJ();
-
             if (is_selected == 1)
             {
                 if (can_move(i, j) && is_not_king(i, j))
@@ -519,10 +611,6 @@ namespace Chess_Atestat
                     if (curr_is_checked() == true)
                     {
                         Console.WriteLine($"{active_side} is in Check!");
-                        if(curr_is_mated() == true)
-                        {
-                            end_game();
-                        }
                         if (active_piece == "King")
                         {
                             if (active_side == "White")
@@ -711,7 +799,7 @@ namespace Chess_Atestat
             {
                 if (turn % 2 == 1 && new_tag.Split(' ')[0] == "Black" || turn % 2 == 0 && new_tag.Split(' ')[0] == "White" || new_tag.Split(' ')[0] == "Neutral")
                 {
-                    highlight();
+                    decolor();
                     return;
                 }
                 else
@@ -749,6 +837,7 @@ namespace Chess_Atestat
             {
                 whiteTaken[i] = new PictureBox();
                 whiteTaken[i].Location = new Point(72 + 30 * (i % 8), 52 + 30 * (i / 8));
+                whiteTaken[i].BackColor = Color.Transparent;
                 whiteTaken[i].BackgroundImageLayout = ImageLayout.Stretch;
                 //iteTaken[i].BackColor = Color.Black;
                 whiteTaken[i].Size = new Size(30,30);
@@ -756,6 +845,7 @@ namespace Chess_Atestat
 
                 blackTaken[i] = new PictureBox();
                 blackTaken[i].Location = new Point(72 + 30 * (i % 8), 153 + 30 * (i / 8));
+                blackTaken[i].BackColor = Color.Transparent;
                 blackTaken[i].BackgroundImageLayout = ImageLayout.Stretch;
                 //blackTaken[i].BackColor = Color.Black;
                 blackTaken[i].Size = new Size(30, 30);

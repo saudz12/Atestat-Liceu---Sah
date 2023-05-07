@@ -79,6 +79,7 @@
             this.buttonHTP.TabIndex = 3;
             this.buttonHTP.Text = "How To play";
             this.buttonHTP.UseVisualStyleBackColor = false;
+            this.buttonHTP.Click += new System.EventHandler(this.buttonHTP_Click);
             this.buttonHTP.MouseEnter += new System.EventHandler(this.button_MouseEnterLeave);
             this.buttonHTP.MouseLeave += new System.EventHandler(this.button_MouseEnterLeave);
             // 
@@ -96,8 +97,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.BackgroundImage = global::Chess_Atestat.Properties.Resources.black_king1;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox1.Location = new System.Drawing.Point(12, 174);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(234, 227);

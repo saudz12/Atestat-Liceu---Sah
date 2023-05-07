@@ -143,6 +143,16 @@ namespace Chess_Atestat.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap brick {
+            get {
+                object obj = ResourceManager.GetObject("brick", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap carlesvsnakamura {
             get {
                 object obj = ResourceManager.GetObject("carlesvsnakamura", resourceCulture);
@@ -236,6 +246,26 @@ namespace Chess_Atestat.Properties {
         internal static System.Drawing.Bitmap white_rook {
             get {
                 object obj = ResourceManager.GetObject("white_rook", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wood {
+            get {
+                object obj = ResourceManager.GetObject("wood", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wood1 {
+            get {
+                object obj = ResourceManager.GetObject("wood1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

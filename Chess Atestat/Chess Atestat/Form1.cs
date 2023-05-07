@@ -74,5 +74,10 @@ namespace Chess_Atestat
             chess.ShowDialog();
             this.Show();
         }
+
+        private void buttonHTP_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
